@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Квантовый компьютер</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+        }
+
+        header {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(5, 1, 37);
+            display: flex;
+            color: #78E544;
+            overflow: hidden;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 110%;
+        }
+
+        #timeline {
+            width: 30vw;
+            height: 100vh;
+            /* outline: 1px solid white; */
+            position: relative;
+        }
+
+        .page {
+            width: 70vw;
+            height: 100vh;
+            /* outline: 1px solid white; */
+        }
+
+        #line {
+            position: absolute;
+            width: 0.2vw;
+            height: 70vh;
+            left: 15vw;
+            top: 15vh;
+            background-color: #85041D;
+        }
+
+        /* .circle2 {
+            width: 1vw;
+            height: 1vw;
+            border-radius: 50%;
+            background-color: #ad1432;
+            position: absolute;
+            top: 5vh;
+            left: .5vw;
+        } */
+
+        .circle1 {
+            width: 0.3vw;
+            height: 0.3vw;
+            border-radius: 50%;
+            background-color: #fa1c49;
+            position: absolute;
+            top: 5vh;
+            left: -.05vw;
+        }
+
+        .n2 {
+            top: 15vh;
+            /* left: -.05vw; */
+        }
+
+        .n3 {
+            top: calc(25vh + 0.5mm);
+            /* left: -.05vw; */
+        }
+
+        .circle1 p {
+            position: absolute;
+            left: 0.7vw;
+            top: -2.8vh;
+            color: #f03056
+        }
+
+        .txt {
+            display: none
+        }
+
+        .circle1 p:hover {
+            cursor: pointer;
+        }
+
+        .circle1:hover {
+            cursor: pointer
+        }
+
+        .pageHello {
+            width: 40vw;
+            height: 70vh;
+            /* font-size: 68px;
+            font-weight: 900; */
+            /* left: 15vw; */
+            margin-top: 15vh;
+            display: flex;
+            flex-direction: column;
+            overflow: visible;
+        }
+
+        .pageHello .p1 {
+            height: 70%;
+            background-image: url(introduction-visual.png);
+            background-repeat: no-repeat;
+            background-position: 110% bottom;
+            border-bottom: 2px solid grey;
+            overflow: visible;
+
+        }
+
+        .pageHello .p2 {
+            height: 30%;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .pageHello .p2 .t:hover {
+            color: wheat
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <section id="timeline">
+            timeline
+            <div id="line">
+                <div class="circle1">
+                    <p class="dig">01</p>
+                    <p class="txt">Главная</p>
+                </div>
+                <!-- <p>Потенциальные области применения</p> -->
+                <div class="circle1 n2">
+                    <p class="dig">02</p>
+                    <p class="txt">Потенциальные области применения</p>
+                </div>
+                <!-- <p>Потенциальные области применения</p> -->
+                <div class="circle1 n3">
+                    <p class="dig">03</p>
+                    <p class="txt">Практические реализации</p>
+                </div>
+            </div>
+        </section>
+        <section class="pageHello">
+            <div class="p1"></div>
+            <div class="p2">
+                <p class="t">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore vitae sapiente, eos sed,
+                    assumenda voluptatibus eaque nisi sit dolorum praesentium ducimus hic quae exercitationem veniam
+                    quia tempore qui distinctio deleniti.</p>
+                <p class="t">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga velit temporibus tempora
+                    doloremque quasi similique laudantium optio, illum porro vel voluptas quisquam, quam sapiente,
+                    commodi dolore architecto in minima saepe!</p>
+                <p class="t">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo sit rerum soluta distinctio,
+                    dolores recusandae aliquam suscipit consectetur quae mollitia harum voluptatum quidem alias quis
+                    culpa ad hic architecto ducimus?
+                </p>
+            </div>
+        </section>
+    </header>
+    <script>
+        line.onclick = function (e) {
+            // console.log(e.target.nodeName)
+            let pmass = document.querySelectorAll(".dig")
+            let txts = document.querySelectorAll(".txt")
+            console.log(pmass)
+            if (e.target.className == "dig") {
+                for (let key of pmass) {
+                    console.log(key)
+                    key.style.left = "0.7vw"
+
+                }
+                for (let key of txts) {
+                    // console.log(key)
+                    key.style.display = "none"
+
+                }
+
+            }
+            if (e.target.nodeName == "P" && e.target.className == "dig") {
+                e.target.style.left = "-2vw"
+                e.target.parentNode.childNodes[3].style.display = "block"
+
+            }
+            // console.log(e.target.className)
+
+            // console.log(e.target.parentNode.childNodes[3].innerHTML)
+        }
+    </script>
+</body>
+
+</html>
